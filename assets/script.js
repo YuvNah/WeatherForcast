@@ -49,20 +49,20 @@ function getWeather(lat, lon) {
           var nextDate = data.list[i].dt_txt;
 
           // creating relevant elements
-          var nextForcastSpanEl = document.createElement("span");
-          // var nextDayDivEl = document.createElement("div");
-          var nextTempH = document.createElement("h5");
+          var nextForcastEl = document.createElement("span");
+          var nextDayDivEl = document.createElement("div");
           var nextDateH = document.createElement("h5");
+          var nextTempH = document.createElement("h6");
 
           // Putting Data inside the elements
-          nextTempH.textContent = `${nextTemp} c°`;
           nextDateH.textContent = nextDate;
+          nextTempH.textContent = `${nextTemp} c°`;
 
           //appending
-          fiveDayForcast.appendChild(nextForcastSpanEl);
-          // nextForcastSpanEl.appendChild(nextDayDivEl);
-          nextForcastSpanEl.appendChild(nextDateH);
-          nextForcastSpanEl.appendChild(nextTempH);
+          fiveDayForcast.appendChild(nextForcastEl);
+          nextForcastEl.appendChild(nextDayDivEl);
+          nextForcastEl.appendChild(nextDateH);
+          nextForcastEl.appendChild(nextTempH);
 
           console.log(nextTemp);
         }

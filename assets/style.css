@@ -6,7 +6,8 @@
   --dark: #38302e;
   --border-radius: 0.3rem;
 }
-main {
+
+body {
   background-color: var(--secondary);
   font-family: comfortaa;
 }
@@ -29,3 +30,5 @@ header {
   padding: 10px;
   margin-bottom: 10px;
 }
+
+#test2
