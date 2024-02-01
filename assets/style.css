@@ -1,0 +1,31 @@
+:root {
+  --primary: #739072;
+  --secondary: #ece3ce;
+  --tertiary: #788585;
+  --light-dark: #6f6866;
+  --dark: #38302e;
+  --border-radius: 0.3rem;
+}
+main {
+  background-color: var(--secondary);
+  font-family: comfortaa;
+}
+
+header {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 7px;
+  color: var(--secondary);
+}
+
+#info {
+  padding-top: 7px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+#currentWeather {
+  border: solid 3px black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
