@@ -7,6 +7,7 @@ let dateEl = document.getElementById("dateEl");
 let currentTempEl = document.getElementById("currentTemp");
 let currentWindEl = document.getElementById("currentWind");
 let currentHumEl = document.getElementById("currentHum");
+let fiveDayForcast = document.getElementById("test");
 
 function getApi() {
   var city = document.getElementById("search-form").value;
@@ -41,9 +42,30 @@ function getWeather(lat, lon) {
       currentTempEl.textContent = `${temp} c°`;
       currentWindEl.textContent = currentWind;
       currentHumEl.textContent = `${currentHum}%`;
-      for (var i = 0; i < 6; i += 8) {
-        var nextTemp = data.list[i].main.temp;
-        console.log(nextTemp);
+      for (var i = 0; i < data.list.length; i += 8) {
+        if (i < data.list.length) {
+          // pulling the relevant data
+          var nextTemp = data.list[i].main.temp;
+          var nextDate = data.list[i].dt_txt;
+
+          // creating relevant elements
+          var nextForcastSpanEl = document.createElement("span");
+          // var nextDayDivEl = document.createElement("div");
+          var nextTempH = document.createElement("h5");
+          var nextDateH = document.createElement("h5");
+
+          // Putting Data inside the elements
+          nextTempH.textContent = `${nextTemp} c°`;
+          nextDateH.textContent = nextDate;
+
+          //appending
+          fiveDayForcast.appendChild(nextForcastSpanEl);
+          // nextForcastSpanEl.appendChild(nextDayDivEl);
+          nextForcastSpanEl.appendChild(nextDateH);
+          nextForcastSpanEl.appendChild(nextTempH);
+
+          console.log(nextTemp);
+        }
       }
     });
 }
