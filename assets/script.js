@@ -51,6 +51,7 @@ function getWeather(lat, lon) {
           // creating relevant elements
           var nextForcastEl = document.createElement("span");
           var nextDayDivEl = document.createElement("div");
+          nextDayDivEl.setAttribute("class", "row col-md-4 mb-3");
           var nextDateH = document.createElement("h5");
           var nextTempH = document.createElement("h6");
 
