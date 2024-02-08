@@ -8,6 +8,10 @@ let currentTempEl = document.getElementById("currentTemp");
 let currentWindEl = document.getElementById("currentWind");
 let currentHumEl = document.getElementById("currentHum");
 let fiveDayForcast = document.getElementById("test");
+let tlvBtn = document.getElementById("telAviv");
+let nycBtn = document.getElementById("newYork");
+let lndnBtn = document.getElementById("london");
+let michBtn = document.getElementById("michmoret");
 
 function getApi() {
   var city = document.getElementById("search-form").value;
@@ -70,3 +74,63 @@ function getWeather(lat, lon) {
       }
     });
 }
+
+function telAviv() {
+  var city = "Tel Aviv";
+  var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIkey}`;
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var lat = data[0].lat;
+      var lon = data[0].lon;
+      getWeather(lat, lon);
+    });
+}
+tlvBtn.addEventListener("click", telAviv);
+
+function newYork() {
+  var city = "New York";
+  var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIkey}`;
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var lat = data[0].lat;
+      var lon = data[0].lon;
+      getWeather(lat, lon);
+    });
+}
+nycBtn.addEventListener("click", newYork);
+
+function london() {
+  var city = "london";
+  var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIkey}`;
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var lat = data[0].lat;
+      var lon = data[0].lon;
+      getWeather(lat, lon);
+    });
+}
+lndnBtn.addEventListener("click", london);
+
+function michmoret() {
+  var city = "Michmoret";
+  var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIkey}`;
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var lat = data[0].lat;
+      var lon = data[0].lon;
+      getWeather(lat, lon);
+    });
+}
+michBtn.addEventListener("click", michmoret);

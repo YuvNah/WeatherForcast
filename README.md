@@ -1,9 +1,9 @@
 # WeatherForcast
 
-A forcast webpage, presetnting the
+A forcast webpage, presetnting updated and relevant information regarding the current weather, and the next five days.
 
-## User Story
+## Usage
 
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
+The user enters the name of the city he is intrested in, after clicking the search button the the user will be presented with the current weather information and a five day forcast.
+
+![alt text](assets/screenshot.png)
